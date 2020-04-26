@@ -1,0 +1,19 @@
+<h4>商品一覧</h4>
+(<%=@items.count%>件）
+<% @items.each do |item| %>
+  <%= link_to item_path(item) do %>
+    <%= attachment_image_tag item, :image, size: '200x200',format: "jpeg",fallback: "k2.jpg" %>
+  <% end %>
+
+  <p>
+    <%= item.item_name %>
+  </p>
+  <p>
+   ¥ <%= item.item_price.to_s(:delimited) %>(税込)</p>
+
+  <% if item.is_sale_status == false %>
+      <span class="text-danger">売り切れ</span>
+    <% else %>
+      <span class="text-success">販売中</span>
+  <% end %>
+<% end %>

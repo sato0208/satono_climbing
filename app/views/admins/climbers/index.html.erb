@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>会員一覧画面</h2>
+    <table class="table table-hover">
+        <thead class="thead-lignt">
+            <tr>
+                <th>会員ID</th>
+                <th>氏名</th>
+                <th>メールアドレス</th>
+                <th>ステータス</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @climbers.each do |clim| %>
+            <tr>
+                <td>
+                    <%= clim.id %>
+                </td>
+                <td>
+                    <%= link_to admins_climber_path(clim.id) do %>
+                    <%= clim.name %>
+                    <% end %>
+                </td>
+                <td>
+                    <%= clim.email %>
+                </td>
+                <td>
+                    <% if clim.is_member_status == false %>
+                    <span class="text-success">有効会員</span>
+                    <% else %>
+                    <span class="text-danger">退会済み</span>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

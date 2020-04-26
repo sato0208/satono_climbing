@@ -1,0 +1,2 @@
+module Climbers::ShipsHelper
+end

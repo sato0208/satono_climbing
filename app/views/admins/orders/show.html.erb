@@ -1,0 +1,65 @@
+<h1>注文詳細画面</h1>
+<table>
+    <tbody>
+        <tr>
+            <th>購入者</th>
+            <td>
+                <%= @order.ship_name %>
+            </td>
+        </tr>
+        <tr>
+            <th>配送先</th>
+            <td>
+                <%= @order.ship_postcode + @order.ship_address + @order.ship_name %>
+            </td>
+        </tr>
+        <tr>
+            <th>支払方法</th>
+            <td>
+                <%= @order.pay_method %>
+            </td>
+        </tr>
+        <tr>
+            <th>注文ステータス</th>
+            <td>
+                <%= @order.order_status %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th>商品</th>
+            <th>単価（税込）</th>
+            <th>個数</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @sum = 0 %>
+        <% @order_items.each do |f| %>
+        <tr>
+            <td>
+                <%= f.order_item_name %>
+            </td>
+            <td>
+                <%= f.order_item_price %>
+            </td>
+            <td>
+                <%= f.order_item_quantity %>
+            </td>
+            <td>
+                <%= @sum += (f.order_item_price) * (f.order_item_quantity) %>
+            </td>
+            <%= form_with model: @orde_item, url:admins_order_item_path,local: true do |s| %>
+            <td>
+              <%= s.select :product_status, OrderItem.product_statuses.keys,{} %>
+              <%= s.submit "更新",class: "btn btn-primary" %>
+            <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

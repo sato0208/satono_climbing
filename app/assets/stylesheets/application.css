@@ -1,0 +1,510 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container{
+  width: 1024px;
+  margin:0 auto;
+}
+
+.heading-p{
+  margin: 10px auto 30px auto;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+}
+
+.header{
+  width:100%;
+  height:70px;
+  background-color: #EC715F;
+  text-align: right;
+}
+
+.header a{
+  color: white;
+  text-decoration: none;
+}
+
+.fas fa-kiwi-bird {
+  margin-left: 1px;
+  color: white;
+  size: 16px;
+
+}
+.header img{
+  height: 70px;
+}
+
+.logo{
+  display: inline;
+  float: left;
+}
+
+.header a {
+  color: white;
+  size: 16px;
+  margin: 25px 30px;
+  display: inline-block;
+  text-align: right;
+}
+
+.main-visual{
+  width: 100%;
+  height: 650px;
+  background-image: url(c1.jpg);
+  background-size: cover;
+}
+
+p.mainvi-vi {
+  font-size: 64px;
+  color: #FAFAFA;
+  margin-bottom: 10px;
+  padding-top: 200px;
+  text-align: center;
+}
+
+p.mainvi-p {
+  font-size: 20px;
+  color: #FAFAFA;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+.main{
+  width: 100%;
+  background-color: #ECEFF1;
+  color: #000000;
+
+}
+.main-container{
+  width: 920px;
+  margin:auto auto;
+  text-align: center;
+  padding: 0px 0 90px 0;
+}
+
+.heading{
+  font-size: 32px;
+  padding-top: 90px;
+  text-align: center;
+}
+
+.ander {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 8px auto 0 auto;
+    background-color: #EC715F;
+}
+
+
+
+p.sample1 {
+width:300px; height:250px;
+border:none;
+background-image:url(k1.jpg);
+background-size:cover;
+float: left;
+margin:0px 10px 0px 0px;
+padding: 11px;
+}
+
+p.sample2 {
+width:300px; height:250px;
+border:none;
+background-image:url(k3.jpg);
+background-size:cover;
+float: left;
+margin:0px 10px 0px 0px;
+padding: 11px;
+
+
+}
+
+p.sample3 {
+width:300px; height:250px;
+border:none;
+background-image:url(k4.jpg);
+background-size:cover;
+float: left;
+margin:0px 10px 0px 0px;
+padding: 11px;
+
+
+}
+
+p.sample4 {
+width:300px; height:250px;
+border:none;
+background-image:url(k5);
+background-size:cover;
+float: left;
+margin:10px 10px 0px 0px;
+padding: 11px;
+
+}
+
+p.sample5 {
+width:300px; height:250px;
+border:none;
+background-image:url(k6.jpg);
+background-size:cover;
+float: left;
+margin:10px 10px 0px 0px;
+padding: 11px;
+
+
+}
+
+p.sample6 {
+width:300px; height:250px;
+border:none;
+background-image:url(k2.jpg);
+background-size:cover;
+float: left;
+margin:10px 10px 0px 0px;
+padding: 11px;
+
+}
+
+.sample:nth-child(3n) {
+    margin-right: 0;
+}
+.sample:nth-child(-n+3) {
+    margin-top: 0;
+}
+
+.feature {
+  color:#000000;
+  margin: 0 auto;
+}
+
+
+.strength {
+    float: left;
+    width: 320px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.my-icon {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    float: left;
+    background-image: url(img/my-icon.jpg);
+    margin: 0 auto; 
+
+}
+
+h3.feature-title{
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#feature {
+    background-size: cover;
+    background-position: center;
+}
+.profile {
+  width: 100%;
+  background-color: #ECEFF1;
+  padding-bottom: 90px;
+}
+
+.left-content {
+    width: 50%;
+    float: left;
+}
+
+.prof-vi{
+  text-align: left;
+}
+
+.contact {
+  width: 100%;
+  margin-bottom: 90px;
+  text-align: center;
+
+}
+.contact-left{
+  width: 50%;
+  float: left;
+}
+.contact-right{
+  width:50%;
+  float: left;
+}
+
+.social i {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-size: 60px;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #EC715F;
+  font-size: 16px;
+  color: #FAFAFA;
+  text-align: center;
+  padding: 40px;
+
+}
+
+p .copyright{
+  font-size: 16px;
+  color: #FAFAFA;
+}
+
+
+/*スマートフォンサイズ（767px）以下の際に適応される設定*/
+@media screen and (max-width:767px) {
+  .container {
+    width: 90%;
+  }
+  ul >.fas fa-kiwi-bird{
+    display: none;
+  }
+
+  li > a {
+    display: none;
+  }
+  .main-visual{
+  margin: 0 5px;
+  background-image: url(img/code.png);
+  background-size: cover;
+}
+
+p.sample:nth-child(odd) {
+  display: none;
+}
+
+p.sample:nth-child(even) {
+  float: none;
+  margin: 10px auto;
+  background-size: cover;
+}
+
+.strength{
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.my-icon{
+  float: none;
+}
+.left-content{
+  float: none;
+  margin: 0 auto;
+}
+.prof-vi{
+  float: none;
+}
+
+h3.feature-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-left{
+  float: none;
+  margin: 0 auto;
+
+}
+
+.contact-right{
+  float: none;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------- */
+/* --- ハンバーガーアイコン --- */
+/* ---------------------------- */
+ 
+ 
+#hm-icon{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 11;
+
+}
+.list-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #FAFAFA;
+}
+
+ 
+.menu-trigger,
+.menu-trigger span {
+color: #FAFAFA;
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+ 
+.menu-trigger {
+  float: right;
+    width: 10px;
+    height: 10px;
+    margin-right: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ 
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 4px;
+  background-color: #FAFAFA;
+
+}
+ 
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+
+}
+ 
+.menu-trigger span:nth-of-type(2) {
+  top: 22px;
+}
+ 
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+ 
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+ 
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+ 
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+ 
+ 
+/* ------------------------ */
+/* ------ spメニュー ------ */
+/* ------------------------ */
+ 
+ 
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 10;
+}
+ 
+#sp-menu a{
+  text-align: center;
+  margin-bottom: 30px;
+}
+ 
+#sp-menu a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}}

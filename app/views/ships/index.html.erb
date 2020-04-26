@@ -1,0 +1,16 @@
+<h1>配送先登録/一覧</h1>
+<%= form_with model: @ship_new, url:ships_path(current_climber.id), method: :POST, local: true do |f| %>
+<%= f.label :ship_code %>
+<%= f.text_field :ship_code %>
+<%= f.label :ship_address %>
+<%= f.text_field :ship_address %>
+<%= f.label :ship_name %>
+<%= f.text_field :ship_name %>
+<%= f.submit '登録する' %>
+<% end %>
+
+<% current_climber.ships.each do |ship| %>
+<%= ship.name %>
+<%= ship.code %>
+<%= ship.address %>
+<% end %>

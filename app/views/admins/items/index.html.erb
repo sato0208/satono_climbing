@@ -1,0 +1,17 @@
+<div class="container">
+<h4>商品一覧</h4>
+(全<%= @items.count %>件)
+<% @items.each do |f| %>
+<%= link_to admins_item_path(f) do %>
+<!-- 画像が反映されない -->
+<%= attachment_image_tag f, :image, size:'200×200', formag: 'jpeg',fallback: 'c2.jpg' %><% end %>
+<%= f.item_name %>
+¥<%= f.item_price.to_s(:delimited) %>（税込）
+
+<% if f.is_sale_status == false %>
+ <span class="text_danger">売り切れ</span>
+ <% else %>
+ <span class="text_success">販売中</span>
+ <% end %>
+</div>
+<% end %>

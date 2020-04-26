@@ -1,0 +1,2 @@
+module Climbers::ItemsHelper
+end

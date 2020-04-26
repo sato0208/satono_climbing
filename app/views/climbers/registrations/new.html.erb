@@ -1,0 +1,49 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<!-- ユーザーログイン -->
+  <div class="field">
+    <label for="name">フルネーム</label><br/>
+    <%= f.text_field :name, id:"name", autofocus: true, placeholder: "山田花子" %>
+  </div>
+
+    <div class="field">
+    <label for="name_kana">フルネーム（カナ）</label><br/>
+    <%= f.text_field :name_kana, id:"name_kana", autofocus: true, placeholder: "ヤマダ" %>
+  </div>
+
+  <div class="field">
+    <label for="email">メールアドレス</label><br/>
+    <%= f.email_field :email, id:"email", autocomplete: "email", placeholder: "hoge@example.com" %>
+  </div>
+
+  <div class="field">
+    <label for="post_code">郵便番号</label><br/>
+    <%= f.text_field :post_code, id:"post_code", placeholder: "郵便番号" %>
+  </div>
+
+  <div class="field">
+    <label for="address">住所</label><br/>
+    <%= f.text_field :address, id:"address", placeholder: "東京都渋谷区神南1丁目19-11 パークスウェースクエア2 4階"%>
+  </div>
+
+  <div class="field">
+    <label for="address">パスワード(6文字以上)</label><br/>
+    <% if @minimum_password_length %>
+    <% end %><br/>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <label for="address">パスワード(確認用)</label><br/>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "climbers/shared/links" %>

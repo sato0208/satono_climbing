@@ -1,0 +1,2 @@
+module Climbers::JimsHelper
+end

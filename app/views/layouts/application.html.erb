@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NaganoCake</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <script type="text/javascript">function disp(){window.alert('アラートの表示');}</script>
+  </head>
+
+  <body>
+
+    <% if admin_signed_in? %>
+
+      <header class="navbar navbar-fixed-top">
+        <div class="container">
+            <nav class="nav navbar-nav navbar-left">
+                <span>LOGO</span>
+            </nav>
+            <nav>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to ' 商品一覧', admins_items_path %></li>
+
+                    <li><%= link_to ' 会員一覧', admins_climbers_path %></li>
+
+                    <li><%= link_to ' 注文履歴一覧', admins_orders_path, class: 'glyphicon glyphicon-user users' %></li>
+
+                    <li><%= link_to ' ジャンル', admins_genres_path %></li>
+                </ul>
+            </nav>
+            <nav class="nav navbar-nav navbar-search">
+                  <form class="form-box">
+                    <input class="form-input" type="search" placeholder="search">
+                    <button class="form-button glyphicon glyphicon-search"></button>
+                  </form>
+            </nav>
+        </div>
+      </header>
+
+    <% elsif climber_signed_in? %>
+
+    <header class="navbar navbar-fixed-top">
+      <div class="container">
+          <nav class="nav navbar-nav navbar-left">
+            <span>LOGO</span>
+          </nav>
+
+          <nav>
+              <ul class="nav navbar-nav navbar-right">
+
+            <li>ようこそ、<%= current_climber.email %>さん！</li>
+
+                  <li><%= link_to 'マイページ', climber_path(current_climber), class: "btn btn-default" %></li>
+
+                  <li><%= link_to ' 商品一覧', items_path, class: "btn btn-default" %></li>
+
+                  <li><%= link_to 'カート', cart_items_path, class: "btn btn-default" %></li>
+
+                  <li><a rel="nofollow" data-method="delete" href="/climbers/sign_out", class="btn btn-default">ログアウト</a></li>
+              </ul>
+          </nav>
+      </div>
+    </header>
+
+    <% else %>
+
+    <header class="navbar navbar-fixed-top">
+      <div class="container">
+          <nav class="nav navbar-nav navbar-left">
+              <span>LOGO</span>
+          </nav>
+          <nav>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><%= link_to ' 商品一覧', items_path, class: "btn btn-default" %></li>
+
+                  <li><a href="/climbers/sign_up", class="btn btn-default">新規登録</a></li>
+
+                  <li><a href="/climbers/sign_in", class="btn btn-default">ログイン</a></li>
+              </ul>
+          </nav>
+      </div>
+    </header>
+
+    <% end %>
+
+    <%= yield %>
+  </body>
+
+</html>
