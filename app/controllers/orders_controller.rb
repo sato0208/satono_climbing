@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
             @order_item_new.order_item_price = f.item.item_price
             @order_item_new.order_item_quantity = f.cart_item_quantity
             @order_item_new.order_item_name = f.item.item_name
+            @order_item_new.order_item_size = f.cart_item_size
           @order_item_new.save
         end
           @ship_new = Ship.new(climber_id: current_climber.id, code: params[:order][:ship_postcode],address: params[:order][:ship_address],name: params[:order][:ship_name])

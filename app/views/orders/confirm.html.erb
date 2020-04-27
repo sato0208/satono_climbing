@@ -6,6 +6,7 @@
                 <tr>
                     <th>商品名</th>
                     <th>単価(税込)</th>
+                    <th>サイズ</th>
                     <th>数量</th>
                     <th>小計</th>
                 </tr>
@@ -19,6 +20,9 @@
                     </td>
                     <td>
                         <%= cart_item.item.item_price %>
+                    </td>
+                    <td>
+                        <%= cart_item.cart_item_size %>
                     </td>
                     <td>
                         <%= cart_item.cart_item_quantity %>
@@ -65,9 +69,9 @@
         <% end %>
 
     </div>
-    <br><span>支払い方法</span><br />
+    <br><span>支払い方法</span><br/>
     <%= @pay_method %><br>
-    <br><span>お届け先</span><br />
+    <br><span>お届け先</span><br/>
     〒
     <%= @order_postcode %><br>
     <%= @order_address %><br>

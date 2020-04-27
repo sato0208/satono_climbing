@@ -36,7 +36,7 @@ class DeviseCreateClimbers < ActiveRecord::Migration[5.2]
       t.string :name_kana
       t.string :post_code
       t.string :address
-      t.boolean :is_member_status
+      t.boolean :is_member_status, default: false, null: false
       t.integer :jim_id
 
       t.timestamps null: false

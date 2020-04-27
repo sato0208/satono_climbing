@@ -23,6 +23,7 @@ class Admins::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @sizes = Size.all
   end
 
   def edit

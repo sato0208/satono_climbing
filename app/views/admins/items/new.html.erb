@@ -2,16 +2,16 @@
   <div class="row">
     <h1>商品新規登録画面</h1>
     <%= form_with method: :post, url:admins_items_path, model:@item_new, local:true do |f| %>
-    <%= f.label :image, "画像選択" %>
-    <%= f.attachment_field :image %><br>
-    <%= f.label :item_name %>
-    <%= f.text_field :item_name %><br>
-    <%= f.label :item_price %>
-    <%= f.text_field :item_price.to_s(:delimited) %><br>
-    <%= f.label :item_description %>
-    <%= f.text_area :item_description %><br>
-    <%= f.label :genre_id %>
-    <%= f.collection_select :genre_id, @genres, :id, :genre_name %><br>
-    <%= f.select :is_sale_status,[['売り切れ',true],['販売中',false]],{include_blank: '--選択してください--'},:class=> 'item_f.select' %>
+        <%= f.label :image, "画像選択" %>
+        <%= f.attachment_field :image %><br>
+        <%= f.label :item_name %>
+        <%= f.text_field :item_name %><br>
+        <%= f.label :item_price %>
+        <%= f.text_field :item_price %><br>
+        <%= f.label :item_description %>
+        <%= f.text_area :item_description %><br>
+        <%= f.label :genre_id %>
+        <%= f.collection_select :genre_id, @genres, :id, :genre_name %><br>
+        <%= f.select :is_sale_status,[['販売中',true],['売り切れ',false]],{include_blank: '--選択してください--'},:class=> 'item_f.select' %>
     <%= f.submit "新規登録" %>
     <% end %>

@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   attachment :image
   has_many :cart_items, dependent: :destroy
   has_many :orders,dependent: :destroy
+  has_many :size
   belongs_to :genre
   # boolean型の記述
   validates :is_sale_status, inclusion: {in: [true, false]}

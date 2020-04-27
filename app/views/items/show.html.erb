@@ -7,6 +7,10 @@
     ¥<%= @item.item_price.to_s(:delimited) %>(税込)
     <%= f.hidden_field :item_id, value:@item.id %>
     <%= f.select :cart_item_quantity, ['1', '2', '3', '4', '5', '6'],{include_blank: '個数選択'}, class: 'sample' %>
+
+    <!-- genreでサイズのselectボックスを変えたい -->
+    <%= f.select :cart_item_size, ['35', '35.5', '36', '36.5', '37', '37.5'],{include_blank: 'サイズ選択'}, class: 'sample' %>
+
     <%= f.submit'カートに入れる' %>
     <% end %>
   </div>

@@ -10,24 +10,24 @@
             </tr>
         </thead>
         <tbody>
-            <% @climbers.each do |clim| %>
+            <% @climbers.each do |f| %>
             <tr>
                 <td>
-                    <%= clim.id %>
+                    <%= f.id %>
                 </td>
                 <td>
-                    <%= link_to admins_climber_path(clim.id) do %>
-                    <%= clim.name %>
-                    <% end %>
+                  <%= link_to admins_climber_path(f.id) do %>
+                    <%= f.name %>
+                  <% end %>
                 </td>
                 <td>
-                    <%= clim.email %>
+                    <%= f.email %>
                 </td>
                 <td>
-                    <% if clim.is_member_status == false %>
-                    <span class="text-success">有効会員</span>
+                    <% if f.is_member_status == false %>
+                      <span class="text-success">有効会員</span>
                     <% else %>
-                    <span class="text-danger">退会済み</span>
+                      <span class="text-danger">退会済み</span>
                     <% end %>
                 </td>
             </tr>

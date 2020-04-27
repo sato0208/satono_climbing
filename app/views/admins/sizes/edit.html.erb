@@ -1,0 +1,11 @@
+
+<div class="container">
+  <h2>サイズ編集画面</h2>
+    <%= form_with method: :PATCH, model:@size,local: true, url:admins_size_path(@size.id) do |f| %>
+        <%= f.label :ジャンル %>
+        <%= f.text_field :size %>
+          <label><%= f.radio_button :is_active_size, "false" %>有効</label>
+          <label><%= f.radio_button :is_active_size, "ture" %>無効</label>
+        <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+</div>

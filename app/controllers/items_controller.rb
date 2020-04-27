@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @cart_item_new = CartItem.new
+    @sizes = Size.all
   end
 
   def top

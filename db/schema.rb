@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_162151) do
+ActiveRecord::Schema.define(version: 2020_04_27_091109) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_162151) do
     t.integer "cart_item_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "cart_item_size"
   end
 
   create_table "climbers", force: :cascade do |t|
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_162151) do
     t.string "name_kana"
     t.string "post_code"
     t.string "address"
-    t.boolean "is_member_status"
+    t.boolean "is_member_status", default: false, null: false
     t.integer "jim_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_162151) do
     t.boolean "is_sale_status", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "size_id"
   end
 
   create_table "jims", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_162151) do
     t.string "order_item_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "order_item_size"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -107,6 +110,13 @@ ActiveRecord::Schema.define(version: 2020_04_25_162151) do
     t.string "address"
     t.string "name"
     t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.float "size"
+    t.boolean "is_active_size", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
